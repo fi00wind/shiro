@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.coolwind.shiro.web.dao.TestDao" >
+
+    <select id="getById"  resultType="cn.coolwind.shiro.web.entity.Test">
+        SELECT * FROM test WHERE id = #{id}
+    </select>
+
+    <update id="updateTest" parameterType="cn.coolwind.shiro.web.entity.Test">
+        update  test
+        set
+         `name` = #{name},
+         `value` = #{value}
+         where id = #{id}
+    </update>
+
+    <insert id="insert" >
+        insert into test(`name`,`value`)
+        values(#{name},#{value})
+
+    </insert>
+
+</mapper>
